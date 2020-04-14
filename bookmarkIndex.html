@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Booksmark Manager</title>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!--Favicon-->
+    <link rel="shortcut icon" href="bookmark.png" type="image/x-icon">
+
+    <!-- Local CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+
+    <!--Google Fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
+
+
+    <!--CSS-->
+    <style>
+        a:hover {
+            color: rgba(116, 61, 218, 0.856) !important;
+        }
+
+        a {
+            color: rgba(116, 61, 218, 0.856) !important;
+        }
+
+        .form-control:focus {
+            border-color: rgb(116, 61, 218, 0.856) !important;
+            -webkit-box-shadow: inset 0 1px 1px rgba(116, 61, 218, 0.856), 0 0 8px rgba(116, 61, 218, 0.856) !important;
+            box-shadow: inset 0 1px 1px rgba(44, 131, 9, 0.075), 0 0 8px rgba(116, 61, 218, 0.856) !important;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col" id="topCol"></div>
+        </div>
+        <div class="row">
+            <div class="col-4"></div>
+            <div class="col-4" id="middle">
+                <img src="bookmark.png" class="rounded mx-auto d-block" alt="...">
+                <h4>Login</h4>
+                <form>
+                    <div class="row">
+                        <div class="col">
+                            <input type="text" class="form-control" placeholder="Username" id="userName">
+                            <br>
+                            <input type="password" class="form-control" placeholder="Password" id="passWord">
+                            <br>
+                            <button type="button" class="btn btn-dark mb-2" onclick="LoginCheck_bookmarkManager()">Login</button>
+                            <p>
+                                <a href="bookmarkRegister.html">Create new Account.</a>
+                            </p>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="col-4"></div>
+        </div>
+        <div class="row">
+            <div class="row"></div>
+        </div>
+    </div>
+
+
+    <!-- Sweet alert-->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+    <!--Local Javascript-->
+    <script src="script.js"></script>
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+</body>
+<footer>
+    <div class="row">
+        <div class="col" style="text-align: center">
+            <p>
+                <a href="suiteIndex.html">Back to Suite.</a>
+            </p>
+        </div>
+    </div>
+</footer>
+
+</html>

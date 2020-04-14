@@ -1,0 +1,112 @@
+/* Suite Index Page CSS. Starts Here.*/
+
+/* All id used by this page will have the Suite- prefix. */
+
+#Suite-toprow {
+    height: 250px;
+}
+
+#Suite-message {
+    text-align: center;
+    margin-top: 200px;
+}
+
+#tasklistmanager,
+#issuesmanager,
+#bookmarkmanager {
+    text-align: -webkit-center;
+}
+
+.custom-select:focus {
+    border-color: rgb(66, 163, 10) !important;
+    -webkit-box-shadow: inset 0 1px 1px rgba(45, 145, 15, 0.781), 0 0 8px rgba(16, 161, 23, 0.479) !important;
+    box-shadow: inset 0 1px 1px rgba(44, 131, 9, 0.075), 0 0 8px rgba(15, 134, 44, 0.6) !important;
+}
+
+.custom-select {
+    width: 100%;
+    margin: 3px;
+}
+
+#issue_description {
+    width: 100% !important;
+}
+
+/*Bookmark Manager CSS. Starts Here.*/
+
+
+
+
+
+
+/* Task Manager CSS. Starts Here.*/
+
+* {
+    font-family: 'Open Sans Condensed', sans-serif;
+}
+
+a {
+    color: rgba(53, 167, 59, 0.856) !important;
+}
+
+a:hover {
+    color: rgba(53, 167, 59, 0.856) !important;
+}
+
+a:active {
+    color: rgba(52, 184, 69, 0.753) !important;
+}
+
+.form-control:focus {
+    border-color: rgb(66, 163, 10) !important;
+    -webkit-box-shadow: inset 0 1px 1px rgba(45, 145, 15, 0.781), 0 0 8px rgba(16, 161, 23, 0.479) !important;
+    box-shadow: inset 0 1px 1px rgba(44, 131, 9, 0.075), 0 0 8px rgba(15, 134, 44, 0.6) !important;
+}
+
+.bg-success .card-text {
+    color: black !important;
+    border-color: whitesmoke !important;
+}
+
+.bg-success {
+    background-color: #28a745 !important;
+}
+
+.loginForm {
+    text-align: center
+}
+
+.form-control {
+    width: 50% !important;
+}
+
+.card {
+    text-align: -webkit-center !important;
+}
+
+#middlerow {
+    height: 27px;
+}
+
+#middle {
+    text-align: -webkit-center;
+}
+
+#topCol {
+    height: 150px;
+    text-align: center;
+}
+
+#title_textbox {
+    height: 30px;
+    width: 100px !important;
+}
+
+#task_textbox {
+    height: 30px;
+    width: 100% !important;
+}
+
+#add_button {
+    margin-top: 32px;
+}

@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Bookmark Manager</title>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Local CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!--Favicon-->
+    <link rel="shortcut icon" href="bookmark.png" type="image/x-icon">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+
+    <!--Google Fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
+
+    <!--Font Awesome-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
+        crossorigin="anonymous">
+
+    <!--CSS-->
+    <style>
+        input {}
+
+        .card {
+            text-align: left !important;
+        }
+
+        .custom-select:focus {
+            border-color: rgb(116, 61, 218, 0.856) !important;
+            -webkit-box-shadow: inset 0 1px 1px rgba(116, 61, 218, 0.856), 0 0 8px rgba(116, 61, 218, 0.856) !important;
+            box-shadow: inset 0 1px 1px rgba(44, 131, 9, 0.075), 0 0 8px rgba(116, 61, 218, 0.856) !important;
+        }
+
+        .form-control:focus {
+            border-color: rgb(116, 61, 218, 0.856) !important;
+            -webkit-box-shadow: inset 0 1px 1px rgba(116, 61, 218, 0.856), 0 0 8px rgba(116, 61, 218, 0.856) !important;
+            box-shadow: inset 0 1px 1px rgba(44, 131, 9, 0.075), 0 0 8px rgba(116, 61, 218, 0.856) !important;
+        }
+    </style>
+
+</head>
+
+<body onload="bookmarkOnload()" id="body">
+    <div class="container">
+        <div class="row" id="banner">
+            <div class="col" id="topCol">
+                <img src="bookmark.png" class="rounded mx-auto d-block" alt="...">
+                <h2>Bookmark Manager</h2>
+            </div>
+        </div>
+        <hr>
+        <div class="row" id="middlerow">
+            <div class="col-4" id="right">
+                <p>
+                    Hey :
+                    <span id="username"></span>
+                </p>
+            </div>
+            <div class="col-4" id="middle">
+            </div>
+            <div class=" col-4" id="left">
+                <form>
+                    <div class="row">
+                        <div class="col-4">
+                        </div>
+                        <div class="col-4">
+                        </div>
+                        <div class="col-4">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-10">
+                <input type="text" style="width: 100% !important;" id="bookmark_Name" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"
+                    placeholder="Website Name.">
+                <br>
+                <input type="text" style="width: 100% !important;" id="bookmark_url" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"
+                    placeholder="Website URL.">
+            </div>
+            <div class="col-2">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-10">
+            </div>
+            <div class="col-2">
+                <button type="button" id="add_button" class="btn btn-dark btn-sm" onclick="AddingBookmark()" style="width: 100%">add</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-4">
+                <hr>
+            </div>
+            <div class="col-4">
+                <hr>
+            </div>
+            <div class="col-4">
+                <hr>
+            </div>
+        </div>
+        <div class="alert alert-dark" role="alert" style="text-align: center">
+            <h4>Bookmarks</h4> Internet browser feature that allows a user to go back to a previously visited website by clicking
+            on the saved link - without retyping the site's address. Called also favorites. </div>
+        <div class="row">
+            <div class="col-1"></div>
+            <div class="col-10" id="cardgrid">
+                <div class="row" id="contentPanel">
+                </div>
+            </div>
+            <div class="col-1"></div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-4"></div>
+            <div class="col-4">
+            </div>
+            <div class="col-4" style="text-align: right">
+                <p>
+                    <button type="button" class="btn btn-danger" onclick="loginOut_bookmarkManager()"> Logout. </button>
+                </p>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Edit</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <label for="">Current URL</label>
+                    <input type="text" style="width: 100% !important;" id="oldBookmark_url" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"
+                        placeholder="Website URL." disabled>
+                    <br>
+                    <label for="">New URL</label>
+                    <input type="text" style="width: 100% !important;" id="newBookmark_url" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"
+                        placeholder="Website URL.">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger btn-sm" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-dark btn-sm" onclick="saveChangesbookmark()">Save changes</button>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+
+    <!-- Sweet alert-->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js "></script>
+
+    <!--Local Javascript-->
+    <script src="script.js "></script>
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js " integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN "
+        crossorigin="anonymous "></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js " integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q "
+        crossorigin="anonymous "></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js " integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl "
+        crossorigin="anonymous "></script>
+</body>
+
+</html>
